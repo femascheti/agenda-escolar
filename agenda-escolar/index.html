@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu planner de estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <section class="container secao-nova-tarefa">
+      <img src="Group 1.svg" alt="planner de estudos"  class="imagem">
+
+      <div class="anotacoes">
+        <label for="bloco" class="titulo-bloco">Bloco de notas</label>
+        <textarea name="bloco" class="bloco" cols="30" rows="10"></textarea> 
+      </div>
+
+      
+
+      <form id="meuFormulario form-adiciona">
+        <h2 class="titulo-form" id="titulo-form">Adicionar nova tarefa</h2>
+
+        <div class="grupo">
+          <label for="disciplina">Disciplina:</label>
+          <select id="disciplina" class="lista">
+            <option class="opcao-adicionar" value="matematica">Matemática</option>
+            <option class="opcao-adicionar" value="portugues">Português</option>
+            <option class="opcao-adicionar" value="quimica">Química</option>
+          </select>
+
+        </div>
+        <div class="grupo">
+          <label for="descricao">Tarefa:</label>
+          <input id="descricao" name="tarefa" type="text" placeholder="digite sua tarefa" class="campo campo-medio" required>
+          <br>
+        </div>
+        <div class="grupo">
+          <label for="dataDeConclusao">Prazo:</label>
+          <input type="date" id="dataDeConclusao" class="campo campo-medio" required>
+        </div>
+
+        <button type="button" id="adicionar-licao" class="botao adicionar">Enviar</button>
+        </form>
+      </section>
+  </header>
+  
+  
+
+  <section class="container secao-tabela">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Disciplina</th>
+          <th>Tarefa</th>
+          <th>Prazo</th>
+          <th>Feito</th>
+          <th>Progresso</th>
+          <th class="campo-invisivel"></th>
+          
+        </tr>
+      </thead>
+      <tbody id="tabelaRequisicoes" class="td">
+      </tbody>
+    </table>
+
+    <div class="botoes">
+      <div class="filtrar">
+        <button type="button" class="botao filtrar" id="filtroBotao" >Filtrar por disciplina</button>
+        <select id="filtroMenu" class=" filtroMenu" onchange="filtrarRequisicoes()"> 
+          <option value="todas">Todas</option>
+          <option value="matematica">Matemática</option>
+          <option value="portugues">Português</option>
+          <option value="quimica">Química</option>
+        </select>
+      </div>
+
+      <button class="botao ordenar" type="button" id="ordenarBotao" >Ordenar <br> por prazo</button>
+
+      <div class="div-total">
+        <button type="button" class="botao total"   id="totalBotao">Total de tarefas</button>
+        <p id="totalResultado">Você tem um total  <br>de <strong><span id="totalValor"></span> tarefas</strong> para fazer</p>
+      </div>
+
+      
+    </div>
+  </section>
+
+
+  
+
+<script src="js/adicionar.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/forEach.js"></script>
+<script src="js/localStorage.js"></script>
+<script src="js/reduce.js"></script>
+<script src="js/sort.js"></script>
+</body>
+</html>
